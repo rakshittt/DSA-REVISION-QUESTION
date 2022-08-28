@@ -3,11 +3,11 @@ using namespace std;
 
 // Combination sum Leetcode
 
-void findCombination(int ind , int target , int arr[], vector <vector <int> > ans , vector <int>ds ,int n ){
+void findCombination(int ind , int target , int arr[], vector <vector <int> > &ans , vector <int> &ds ,int n ){
 
     if ( ind == n){
         if(target ==0){
-            ans.push_back(ds);
+           ans.push_back(ds); 
         }
         return ;
     }
@@ -31,14 +31,19 @@ void findCombination(int ind , int target , int arr[], vector <vector <int> > an
 int main(){
     int arr[]= {2 ,3, 6 ,7 };
     int n=4;
-    int target =7;
+    int target;
+    cin >>target ;
     vector <int> ds;
     // Vector stores the Vector 
     vector <vector <int> > ans ;
 
     findCombination(0, target , arr , ans , ds ,n);
     // Print of vector < vector <int> > ans is remaining;
-   
+    for( auto list : ans ){
+        for( auto ele :list ){
+            cout << ele <<" ";
+        }
+    }
  
     cout << endl;
 
